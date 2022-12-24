@@ -1,1 +1,3 @@
-console.log("DnD Stat Roller")
+function rollDice() {
+    console.log("DnD Stat Roller")
+}
