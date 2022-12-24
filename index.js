@@ -6,10 +6,10 @@ let wisdom = document.getElementById("wis")
 let charisma = document.getElementById("cha")
 
 function generateStat() {
-    let stat = Math.floor(Math.random() * 18 + 1)
-    if (stat < 4) {
-        stat = 3
-    }
+    let die1 = Math.floor(Math.random() * 6 + 1)
+    let die2 = Math.floor(Math.random() * 6 + 1)
+    let die3 = Math.floor(Math.random() * 6 + 1)
+    let stat = die1 + die2 + die3
     return stat
 }
 
