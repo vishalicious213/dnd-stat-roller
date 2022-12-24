@@ -19,3 +19,28 @@
 .stat-value {
     margin: 0;
 }
+
+#form-race {
+    outline: 1px solid red;
+    /* display: grid; */
+    /* grid-template-columns: repeat(2rem, 1fr); */
+    /* grid-template-columns: 100%; */
+    /* display: flex;
+    flex-wrap: wrap; */
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 20rem;
+}
+
+.race {
+    display: flex;
+}
+
+input {
+    /* outline: 1px solid blue; */
+    margin-right: .5rem;
+}
+
+label {
+    /* outline: 1px solid green; */
+}
