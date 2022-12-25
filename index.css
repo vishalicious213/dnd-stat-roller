@@ -100,6 +100,10 @@ button:hover {
     text-align: center;
 }
 
+.final-value {
+    font-weight: 600;
+}
+
 .modifier {
     outline: 1px solid orange;
     background-color: white;
