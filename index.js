@@ -5,6 +5,8 @@ let intelligence = document.getElementById("int")
 let wisdom = document.getElementById("wis")
 let charisma = document.getElementById("cha")
 
+let characterStats = [0, 0, 0, 0, 0, 0]
+
 let characterRace = "human"
 let previousRace = "human"
 const raceModifiers = {
@@ -54,12 +56,18 @@ function raceModifier() {
 function rollDice() {
     chooseRace()
     // console.log('char race:', characterRace)
-    strength.textContent = generateStat()
-    dexterity.textContent = generateStat()
-    constitution.textContent = generateStat()
-    intelligence.textContent = generateStat()
-    wisdom.textContent = generateStat()
-    charisma.textContent = generateStat()
+    characterStats[0] = generateStat()
+    strength.textContent = characterStats[0]
+    characterStats[1] = generateStat()
+    dexterity.textContent = characterStats[1]
+    characterStats[2] = generateStat()
+    constitution.textContent = characterStats[2]
+    characterStats[3] = generateStat()
+    intelligence.textContent = characterStats[3]
+    characterStats[4] = generateStat()
+    wisdom.textContent = characterStats[4]
+    characterStats[5] = generateStat()
+    charisma.textContent = characterStats[5]
 
     // apply racial modifiers
     
