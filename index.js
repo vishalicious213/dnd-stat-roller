@@ -113,25 +113,16 @@ function renderRaceModifiers(renderRace) {
     modInt.textContent = clean(raceModifiers[renderRace][3])
     modWis.textContent = clean(raceModifiers[renderRace][4])
     modCha.textContent = clean(raceModifiers[renderRace][5])
+    applyRaceModifiers(renderRace)
 }
 
-function applyRaceModifiers(modifierSet) {
-    if (modifierSet === 0) {
-        console.log("remove previous race modifiers")
-        characterStats = baseCharacterStats
-        console.log("apply human modifiers")
-        for (let i = 0; i < 6; i++) {
-            characterStats[i] += raceModifiers[characterRace][i]
-        }
-    }
-
-    if (modifierSet === 1) {
-        console.log("remove previous race modifiers")
-        characterStats = baseCharacterStats
-        console.log("apply dwarf modifiers")
-        for (let i = 0; i < 6; i++) {
-            characterStats[i] = Number(characterStats[i]) + Number(raceModifiers[characterRace][i])
-        }
+function applyRaceModifiers(renderRace) {
+    // remove previous race modifiers
+    characterStats = baseCharacterStats
+    // apply current race modifiers
+    for (let i = 0; i < 6; i++) {
+        console.log(characterStats[i] + raceModifiers[renderRace][i])
+        characterStats[i] += raceModifiers[renderRace][i]
     }
 
     renderStats()
