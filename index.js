@@ -68,7 +68,7 @@ function renderStats() {
 // set selected race/species (onclick)
 function chooseRace(raceFromForm) {
     characterRace = raceFromForm.value // radio button value is a string
-    console.log(`current race:`, characterRace)
+    // console.log(`current race:`, characterRace)
     renderRaceModifiers(characterRace)
 }
 
@@ -86,7 +86,7 @@ function clean(valueToFormat) {
 
 // render racial modifiers on screen
 function renderRaceModifiers(renderRace) {
-    console.log('modifiers', raceModifiers[renderRace])
+    // console.log('modifiers', raceModifiers[renderRace])
     modStr.textContent = clean(raceModifiers[renderRace][0])
     modDex.textContent = clean(raceModifiers[renderRace][1])
     modCon.textContent = clean(raceModifiers[renderRace][2])
@@ -108,10 +108,10 @@ function resetToBaseStats() {
 function applyRaceModifiers(renderRace) {
     // remove previous race modifiers
     resetToBaseStats()
-    console.log(characterStats)
+    // console.log(characterStats)
     // apply current race modifiers
     for (let i = 0; i < 6; i++) {
-        console.log(characterStats[i] + raceModifiers[renderRace][i])
+        // console.log(characterStats[i] + raceModifiers[renderRace][i])
         characterStats[i] += raceModifiers[renderRace][i]
     }
 
@@ -119,9 +119,6 @@ function applyRaceModifiers(renderRace) {
 }
 
 function rollDice() {
-    // get character race, so we can set modifiers later
-    // chooseRace()
-
     // roll starting stats
     characterStats[0] = generateStat()
     characterStats[1] = generateStat()
@@ -143,5 +140,5 @@ function rollDice() {
     renderStats()
 
     // apply racial modifiers
-    renderRaceModifiers()
+    renderRaceModifiers(characterRace)
 }
