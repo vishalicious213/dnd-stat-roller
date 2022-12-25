@@ -94,16 +94,13 @@ function raceModifier() {
 
 // find which set of race modifiers to render
 function renderRaceModifiers(renderRace) {
-    renderModifiers(raceModifiers[renderRace])
-    // if (renderRace === 0) {
-    //     console.log("render human")
-    //     renderModifiers(raceModifiers.human)
-    // }
-
-    // if (renderRace === 1) {
-    //     console.log("render dwarf")
-    //     renderModifiers(raceModifiers.dwarf)
-    // }
+    console.log(raceModifiers[renderRace])
+    modStr.textContent = raceModifiers[renderRace][0]
+    modDex.textContent = raceModifiers[renderRace][1]
+    modCon.textContent = raceModifiers[renderRace][2]
+    modInt.textContent = raceModifiers[renderRace][3]
+    modWis.textContent = raceModifiers[renderRace][4]
+    modCha.textContent = raceModifiers[renderRace][5]
 }
 
 // render penalties/bonuses in Modifiers column
