@@ -1,8 +1,25 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #stats-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 20rem;
+    width: 20rem;
+    margin: 0 0 .5rem 0;
+    padding: 0;
+}
+
+.section-header {
+    width: 20rem;
+    margin-bottom: .5rem;
+}
+
+.h2 {
+    margin: 0;
 }
 
 button {
@@ -10,15 +27,16 @@ button {
 }
 
 #stats {
-    /* outline: 1px solid red; */
     width: 20rem;
     font-size: 1.25rem;
     margin-bottom: 2rem;
+    margin-top: 0;
 }
 
 #attribute-header {
     display: flex;
     font-size: .9rem;
+    margin-top: 0;
     margin-bottom: .5rem;
     background-color: gainsboro;
 }
@@ -46,7 +64,6 @@ button {
 }
 
 .stat-name {
-    outline: 1px solid red;
     margin: 0;
     min-width: 9rem;
 }
@@ -61,14 +78,14 @@ button {
 .modifier {
     outline: 1px solid yellowgreen;
     margin: 0;
-    min-width: 7rem;
+    min-width: 6rem;
 }
 
 #form-race {
     /* outline: 1px solid red; */
     font-size: 1.25rem;
     margin-bottom: 2rem;
-    max-width: 20rem;
+    width: 20rem;
 }
 
 .race {
