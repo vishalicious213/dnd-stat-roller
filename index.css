@@ -1,3 +1,14 @@
+#stats-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 20rem;
+}
+
+button {
+    height: 1.5rem;
+}
+
 #stats {
     /* outline: 1px solid red; */
     width: 10rem;

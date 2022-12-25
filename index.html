@@ -11,6 +11,37 @@
 <body>
     <h1>D&D Stat Roller</h1>
 
+    <div id="stats-header">
+        <h2>Attribute scores:</h2>
+        <button onclick="rollDice()">Roll dice</button>
+    </div>
+    <section id="stats">
+        <div class="attribute">
+            <p class="stat-name">Strength:</p>
+            <p id="str" class="stat-value"></p>
+        </div>
+        <div class="attribute">
+            <p class="stat-name">Dexterity:</p>
+            <p id="dex" class="stat-value"></p>
+        </div>
+        <div class="attribute">
+            <p class="stat-name">Constitution:</p>
+            <p id="con" class="stat-value"></p>
+        </div>
+        <div class="attribute">
+            <p class="stat-name">Intelligence:</p>
+            <p id="int" class="stat-value"></p>
+        </div>
+        <div class="attribute">
+            <p class="stat-name">Wisdom:</p>
+            <p id="wis" class="stat-value"></p>
+        </div>
+        <div class="attribute">
+            <p class="stat-name">Charisma:</p>
+            <p id="cha" class="stat-value"></p>
+        </div>
+    </section>
+
     <h2>Character race/species:</h2>
     <form id="form-race">
         <div class="race, table-header">
@@ -48,35 +79,6 @@
             <div class="race-modifier">+1 Dex, -1 Str</div>
         </div>
     </form>
-
-    <section id="stats">
-        <div class="attribute">
-            <p class="stat-name">Strength:</p>
-            <p id="str" class="stat-value"></p>
-        </div>
-        <div class="attribute">
-            <p class="stat-name">Dexterity:</p>
-            <p id="dex" class="stat-value"></p>
-        </div>
-        <div class="attribute">
-            <p class="stat-name">Constitution:</p>
-            <p id="con" class="stat-value"></p>
-        </div>
-        <div class="attribute">
-            <p class="stat-name">Intelligence:</p>
-            <p id="int" class="stat-value"></p>
-        </div>
-        <div class="attribute">
-            <p class="stat-name">Wisdom:</p>
-            <p id="wis" class="stat-value"></p>
-        </div>
-        <div class="attribute">
-            <p class="stat-name">Charisma:</p>
-            <p id="cha" class="stat-value"></p>
-        </div>
-    </section>
-
-    <button onclick="rollDice()">Roll dice</button>
 </body>
 
     <script src="index.js"></script>

@@ -46,6 +46,7 @@ function raceModifier() {
 
     if (characterRace === "dwarf") {
         console.log("applyling dwarf modifiers")
+        console.log(raceModifiers.dwarf)
     }
 
 }
