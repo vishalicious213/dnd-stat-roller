@@ -6,6 +6,15 @@ let intelligence = document.getElementById("int")
 let wisdom = document.getElementById("wis")
 let charisma = document.getElementById("cha")
 
+// html BASE attribute score elements
+let baseStrength = document.getElementById("str-base")
+let baseDexterity = document.getElementById("dex-base")
+let baseConstitution = document.getElementById("con-base")
+let baseIntelligence = document.getElementById("int-base")
+let baseWisdom = document.getElementById("wis-base")
+let baseCharisma = document.getElementById("cha-base")
+
+
 // html attribute modifier elements
 let modStr = document.getElementById("mod-str")
 let modDex = document.getElementById("mod-dex")
@@ -73,12 +82,22 @@ function renderRaceModifiers(renderRace) {
 }
 
 function renderModifiers(modSet) {
-    modStr.textContent = modSet[0]
-    modDex.textContent = modSet[1]
-    modCon.textContent = modSet[2]
-    modInt.textContent = modSet[3]
-    modWis.textContent = modSet[4]
-    modCha.textContent = modSet[5]
+    let values = modSet
+    for (let i = 0; i < 6; i++) {
+        if (values[i] === 0) {
+            values[i] = ""
+        }
+        if (values[i] > 0) {
+            values[i] = `+${values[i]}`
+        }
+    }
+
+    modStr.textContent = values[0]
+    modDex.textContent = values[1]
+    modCon.textContent = values[2]
+    modInt.textContent = values[3]
+    modWis.textContent = values[4]
+    modCha.textContent = values[5]
 }
 
 function applyRaceModifiers() {
@@ -94,6 +113,15 @@ function applyRaceModifiers() {
     }
 
     renderStats()
+}
+
+function renderBaseStats() {
+    baseStrength.textContent = characterStats[0]
+    baseDexterity.textContent = characterStats[1]
+    baseConstitution.textContent = characterStats[2]
+    baseIntelligence.textContent = characterStats[3]
+    baseWisdom.textContent = characterStats[4]
+    baseCharisma.textContent = characterStats[5]
 }
 
 function renderStats() {
@@ -118,6 +146,7 @@ function rollDice() {
     characterStats[5] = generateStat()
 
     // display stats onscreen
+    renderBaseStats()
     renderStats()
 
     // apply racial modifiers

@@ -16,6 +16,28 @@ button {
     margin-bottom: 2rem;
 }
 
+#attribute-header {
+    display: flex;
+    font-size: .9rem;
+    margin-bottom: .5rem;
+    background-color: gainsboro;
+}
+
+#stat-name-header {
+    min-width: 9rem;
+    margin: 0;
+}
+
+#stat-value-header, #stat-base-header {
+    min-width: 2rem;
+    margin: 0 .5rem 0 0;
+}
+
+#modifier-header {
+    min-width: 7rem;
+    margin: 0;
+}
+
 .attribute {
     /* outline: 1px solid orange; */
     display: flex;
@@ -31,7 +53,7 @@ button {
 
 .stat-value {
     outline: 1px solid orange;
-    margin: 0;
+    margin: 0 .5rem 0 0;
     min-width: 2rem;
     text-align: right;
 }
@@ -39,7 +61,7 @@ button {
 .modifier {
     outline: 1px solid yellowgreen;
     margin: 0;
-    min-width: 8rem;
+    min-width: 7rem;
 }
 
 #form-race {
@@ -75,8 +97,9 @@ label {
 .table-header {
     background-color: gainsboro;
     border-bottom: 2px solid black;
+    font-size: .9rem;
 }
 
 .selection-header {
-    margin: 0 4rem 0 1.5rem;
+    margin: 0 4rem 0 2.5rem;
 }
