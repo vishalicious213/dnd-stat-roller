@@ -72,7 +72,7 @@ button {
     outline: 1px solid orange;
     margin: 0 .5rem 0 0;
     min-width: 2rem;
-    text-align: right;
+    text-align: center;
 }
 
 .modifier {
