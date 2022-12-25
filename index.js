@@ -72,26 +72,6 @@ function chooseRace(raceFromForm) {
     renderRaceModifiers(characterRace)
 }
 
-// apply racial ability modifiers
-function raceModifier() {
-    console.log("current character race", characterRace)
-    if (characterRace === "human") {
-        console.log("applying human modifiers")
-        console.log(raceModifiers.human)
-        renderRaceModifiers(characterRace)
-        // applyRaceModifiers(0)
-        previousRace = "human"
-    }
-
-    if (characterRace === "dwarf") {
-        console.log("applying dwarf modifiers")
-        console.log(raceModifiers.dwarf)
-        renderRaceModifiers(characterRace)
-        // applyRaceModifiers(1)
-        previousRace = "dwarf"
-    }
-}
-
 // format racial modifiers for display on screen
 function clean(valueToFormat) {
     // console.log(valueToFormat)
@@ -106,7 +86,7 @@ function clean(valueToFormat) {
 
 // render racial modifiers on screen
 function renderRaceModifiers(renderRace) {
-    console.log(raceModifiers[renderRace])
+    console.log('modifiers', raceModifiers[renderRace])
     modStr.textContent = clean(raceModifiers[renderRace][0])
     modDex.textContent = clean(raceModifiers[renderRace][1])
     modCon.textContent = clean(raceModifiers[renderRace][2])
@@ -153,5 +133,5 @@ function rollDice() {
     renderStats()
 
     // apply racial modifiers
-    raceModifier()
+    renderRaceModifiers()
 }
