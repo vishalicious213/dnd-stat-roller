@@ -21,7 +21,7 @@
 }
 
 #form-race {
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
     font-size: 1.5rem;
     margin-bottom: 2rem;
     max-width: 20rem;
@@ -30,6 +30,8 @@
 .race {
     /* outline: 1px solid orange; */
     display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
 }
 
 input {
@@ -45,4 +47,14 @@ label {
 .race-modifier {
     /* outline: 1px solid yellow; */
     font-style: italic;
+    font-size: 1rem;
+}
+
+.table-header {
+    background-color: gainsboro;
+    border-bottom: 2px solid black;
+}
+
+.selection-header {
+    margin: 0 4rem 0 1.5rem;
 }
