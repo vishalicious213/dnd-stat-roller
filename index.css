@@ -2,6 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #54ad9a;
 }
 
 #stats-header {
@@ -42,8 +43,8 @@ button {
 }
 
 #stat-name-header {
-    min-width: 9rem;
-    margin: 0;
+    min-width: 4rem;
+    margin: 0 1.5rem 0 2rem;
 }
 
 #stat-value-header, #stat-base-header {
@@ -53,68 +54,66 @@ button {
 
 #modifier-header {
     min-width: 7rem;
-    margin: 0;
+    margin: 0 0 0 1.25rem;
 }
 
 .attribute {
-    /* outline: 1px solid orange; */
     display: flex;
     justify-content: space-between;
     margin-bottom: .5rem;
 }
 
 .stat-name {
-    margin: 0;
-    min-width: 9rem;
+    margin: 0 0 0 1rem;
+    min-width: 4rem;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .stat-value {
     outline: 1px solid orange;
+    background-color: white;
     margin: 0 .5rem 0 0;
     min-width: 2rem;
     text-align: center;
 }
 
 .modifier {
-    outline: 1px solid yellowgreen;
+    outline: 1px solid orange;
+    background-color: white;
     margin: 0;
     min-width: 6rem;
 }
 
 #form-race {
-    /* outline: 1px solid red; */
     font-size: 1.25rem;
     margin-bottom: 2rem;
     width: 20rem;
 }
 
 .race {
-    /* outline: 1px solid orange; */
     display: flex;
     align-items: center;
     border-bottom: 1px solid black;
 }
 
 input {
-    /* outline: 1px solid blue; */
     width: 1rem;
 }
 
 label {
-    /* outline: 1px solid green; */
     width: 7rem;
 }
 
 .race-modifier {
-    /* outline: 1px solid yellow; */
     font-style: italic;
     font-size: 1rem;
 }
 
 .table-header {
     background-color: gainsboro;
-    border-bottom: 2px solid black;
     font-size: .9rem;
+    margin-bottom: .25rem;
 }
 
 .selection-header {
