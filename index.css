@@ -5,6 +5,21 @@ body {
     background-color: #54ad9a;
 }
 
+h1 {
+    margin-bottom: 0;
+}
+
+#tagline {
+    margin: 0 0 2rem 0;
+    font-style: italic;
+    border: 1px solid black;
+    border-left: 4px double black;
+    border-right: 4px double black;
+    border-radius: 1rem;
+    padding: 0 1rem;
+    background-color: lightyellow;
+}
+
 #stats-header {
     display: flex;
     justify-content: space-between;
@@ -25,6 +40,12 @@ body {
 
 button {
     height: 1.5rem;
+    border: 1px solid orange;
+}
+
+button:hover {
+    border: 1px solid black;
+    cursor: pointer;
 }
 
 #stats {
@@ -40,6 +61,7 @@ button {
     margin-top: 0;
     margin-bottom: .5rem;
     background-color: gainsboro;
+    outline: 1px solid orange;
 }
 
 #stat-name-header {
@@ -97,6 +119,10 @@ button {
     border-bottom: 1px solid black;
 }
 
+.race:hover {
+    cursor: pointer;
+}
+
 input {
     width: 1rem;
 }
@@ -112,6 +138,7 @@ label {
 
 .table-header {
     background-color: gainsboro;
+    outline: 1px solid orange;
     font-size: .9rem;
     margin-bottom: .25rem;
 }

@@ -10,6 +10,7 @@
 
 <body>
     <h1>D&D Stat Roller</h1>
+    <p id="tagline">~ 2nd Edition Rules ~</p>
 
     <div id="stats-header">
         <h2 class="h2">Attribute scores:</h2>
@@ -66,34 +67,34 @@
             <span class="selection-header">Race</span>
             <span>Modifiers</span>
         </div>
-        <div class="race">
+        <div class="race" onclick="chooseRace(human)">
             <input type="radio" id="human" name="race" value="human" checked>
-            <label for="human" onclick="chooseRace(human)">Human</label><br>
+            <label for="human">Human</label><br>
             <div class="race-modifier"></div>
         </div>
-        <div class="race">
+        <div class="race" onclick="chooseRace(dwarf)">
             <input type="radio" id="dwarf" name="race" value="dwarf">
-            <label for="dwarf" onclick="chooseRace(dwarf)">Dwarf</label><br>
+            <label for="dwarf">Dwarf</label><br>
             <div class="race-modifier">+1 Con, -1 Cha</div>
         </div>
-        <div class="race">
+        <div class="race" onclick="chooseRace(elf)">
             <input type="radio" id="elf" name="race" value="elf">
-            <label for="elf" onclick="chooseRace(elf)">Elf</label>
+            <label for="elf">Elf</label>
             <div class="race-modifier">+1 Dex, -1 Con</div>
         </div>
-        <div class="race">
+        <div class="race" onclick="chooseRace(gnome)">
             <input type="radio" id="gnome" name="race" value="gnome">
-            <label for="gnome" onclick="chooseRace(gnome)">Gnome</label>
+            <label for="gnome">Gnome</label>
             <div class="race-modifier">+1 Int, -1 Wis</div>
         </div>
-        <div class="race">
+        <div class="race" onclick="chooseRace(helf)">
             <input type="radio" id="helf" name="race" value="helf">
-            <label for="helf" onclick="chooseRace(helf)">Half-Elf</label>
+            <label for="helf">Half-Elf</label>
             <div class="race-modifier"></div>
         </div>
-        <div class="race">
+        <div class="race" onclick="chooseRace(halfling)">
             <input type="radio" id="halfling" name="race" value="halfling">
-            <label for="halfling" onclick="chooseRace(halfling)">Halfling</label>
+            <label for="halfling">Halfling</label>
             <div class="race-modifier">+1 Dex, -1 Str</div>
         </div>
     </form>
