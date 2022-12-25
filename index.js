@@ -29,7 +29,7 @@ function generateStat() {
 
 // set selected race/species
 function chooseRace(raceFromForm) {
-    characterRace = raceFromForm.value
+    characterRace = raceFromForm.value // radio button value is a string
     console.log(`current race:`, characterRace)
 }
 
@@ -75,7 +75,7 @@ function renderStats() {
 
 function rollDice() {
     // get character race, so we can set modifiers later
-    chooseRace()
+    // chooseRace()
 
     // roll base stats
     characterStats[0] = generateStat()
