@@ -65,42 +65,45 @@ function renderStats() {
     charisma.textContent = characterStats[5]
 }
 
-// set selected race/species
+// set selected race/species (onclick)
 function chooseRace(raceFromForm) {
     characterRace = raceFromForm.value // radio button value is a string
     console.log(`current race:`, characterRace)
+    renderRaceModifiers(characterRace)
 }
 
 // apply racial ability modifiers
 function raceModifier() {
+    console.log("current character race", characterRace)
     if (characterRace === "human") {
         console.log("applying human modifiers")
         console.log(raceModifiers.human)
-        renderRaceModifiers(0)
-        applyRaceModifiers(0)
+        renderRaceModifiers(characterRace)
+        // applyRaceModifiers(0)
         previousRace = "human"
     }
 
     if (characterRace === "dwarf") {
         console.log("applying dwarf modifiers")
         console.log(raceModifiers.dwarf)
-        renderRaceModifiers(1)
-        applyRaceModifiers(1)
+        renderRaceModifiers(characterRace)
+        // applyRaceModifiers(1)
         previousRace = "dwarf"
     }
 }
 
 // find which set of race modifiers to render
 function renderRaceModifiers(renderRace) {
-    if (renderRace === 0) {
-        console.log("render human")
-        renderModifiers(raceModifiers.human)
-    }
+    renderModifiers(raceModifiers[renderRace])
+    // if (renderRace === 0) {
+    //     console.log("render human")
+    //     renderModifiers(raceModifiers.human)
+    // }
 
-    if (renderRace === 1) {
-        console.log("render dwarf")
-        renderModifiers(raceModifiers.dwarf)
-    }
+    // if (renderRace === 1) {
+    //     console.log("render dwarf")
+    //     renderModifiers(raceModifiers.dwarf)
+    // }
 }
 
 // render penalties/bonuses in Modifiers column
@@ -126,13 +129,7 @@ function renderModifiers(modifierSet) {
 function applyRaceModifiers(modifierSet) {
     if (modifierSet === 0) {
         console.log("remove previous race modifiers")
-        console.log("current stats", characterStats)
-        console.log("base stats", baseCharacterStats)
         characterStats = baseCharacterStats
-        console.log("revised stats", characterStats)
-        // for (let i = 0; i < 6; i++) {
-        //     characterStats[i] -= raceModifiers[previousRace][i]
-        // }
         console.log("apply human modifiers")
         for (let i = 0; i < 6; i++) {
             characterStats[i] += raceModifiers[characterRace][i]
@@ -144,24 +141,11 @@ function applyRaceModifiers(modifierSet) {
         characterStats = baseCharacterStats
         console.log("apply dwarf modifiers")
         for (let i = 0; i < 6; i++) {
-            characterStats[i] += raceModifiers[characterRace][i]
+            characterStats[i] = Number(characterStats[i]) + Number(raceModifiers[characterRace][i])
         }
     }
 
-    // // console.log(raceModifiers[characterRace][5])
-    // console.log(`${previousRace} > ${characterRace}`)
-    // for (i = 0; i < 6; i++) {
-    //     // remove modifiers from previous race
-    //     console.log('prev modifier', Number(raceModifiers[previousRace][i]))
-    //     characterStats[i] -= raceModifiers[previousRace][i]
-    //     console.log('minus', characterStats[i])
-    //     // add modifiers from current race
-    //     console.log('curr modifier', Number(raceModifiers[characterRace][i]))
-    //     characterStats[i] += Number(raceModifiers[characterRace][i])
-    //     console.log('plus', characterStats[i])
-    // }
-
-    // renderStats()
+    renderStats()
 }
 
 function rollDice() {
