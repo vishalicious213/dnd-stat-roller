@@ -96,9 +96,19 @@ function renderRaceModifiers(renderRace) {
     applyRaceModifiers(renderRace)
 }
 
+function resetToBaseStats() {
+    characterStats[0] = baseCharacterStats[0]
+    characterStats[1] = baseCharacterStats[1]
+    characterStats[2] = baseCharacterStats[2]
+    characterStats[3] = baseCharacterStats[3]
+    characterStats[4] = baseCharacterStats[4]
+    characterStats[5] = baseCharacterStats[5]
+}
+
 function applyRaceModifiers(renderRace) {
     // remove previous race modifiers
-    characterStats = baseCharacterStats
+    resetToBaseStats()
+    console.log(characterStats)
     // apply current race modifiers
     for (let i = 0; i < 6; i++) {
         console.log(characterStats[i] + raceModifiers[renderRace][i])
