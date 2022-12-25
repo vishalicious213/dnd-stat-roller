@@ -4,7 +4,7 @@ let constitution = document.getElementById("con")
 let intelligence = document.getElementById("int")
 let wisdom = document.getElementById("wis")
 let charisma = document.getElementById("cha")
-let race = "human"
+let characterRace = "human"
 
 // rolls 3d6 as a baseline stat generator
 function generateStat() {
@@ -15,23 +15,39 @@ function generateStat() {
     return stat
 }
 
-// applies racial attribute modifiers
+// find selected race/species
 function chooseRace() {
     let races = document.getElementsByName("race")
-
+    // loop through race radio buttons and get selected one, set characterRace to that value
     for (i = 0; i < races.length; i++) {
         if (races[i].checked) {
-            console.log(races[i].value)
+            characterRace = races[i].value
         }
     }
 }
 
+// apply racial ability modifiers
+function raceModifier() {
+    if (characterRace === "human") {
+        console.log("applyling human modifiers")
+    }
+
+    if (characterRace === "dwarf") {
+        console.log("applyling dwarf modifiers")
+    }
+
+}
+
 function rollDice() {
     chooseRace()
+    // console.log('char race:', characterRace)
     strength.textContent = generateStat()
     dexterity.textContent = generateStat()
     constitution.textContent = generateStat()
     intelligence.textContent = generateStat()
     wisdom.textContent = generateStat()
     charisma.textContent = generateStat()
+
+    // apply racial modifiers
+    
 }
