@@ -68,13 +68,11 @@ function renderStats() {
 // set selected race/species (onclick)
 function chooseRace(raceFromForm) {
     characterRace = raceFromForm.value // radio button value is a string
-    // console.log(`current race:`, characterRace)
     renderRaceModifiers(characterRace)
 }
 
 // format racial modifiers for display on screen
 function clean(valueToFormat) {
-    // console.log(valueToFormat)
     if (valueToFormat === 0) {
         return ""
     }
@@ -86,7 +84,6 @@ function clean(valueToFormat) {
 
 // render racial modifiers on screen
 function renderRaceModifiers(renderRace) {
-    // console.log('modifiers', raceModifiers[renderRace])
     modStr.textContent = clean(raceModifiers[renderRace][0])
     modDex.textContent = clean(raceModifiers[renderRace][1])
     modCon.textContent = clean(raceModifiers[renderRace][2])
@@ -97,21 +94,16 @@ function renderRaceModifiers(renderRace) {
 }
 
 function resetToBaseStats() {
-    characterStats[0] = baseCharacterStats[0]
-    characterStats[1] = baseCharacterStats[1]
-    characterStats[2] = baseCharacterStats[2]
-    characterStats[3] = baseCharacterStats[3]
-    characterStats[4] = baseCharacterStats[4]
-    characterStats[5] = baseCharacterStats[5]
+    for (let i = 0; i < 6; i++) {
+        characterStats[i] = baseCharacterStats[i]
+    }
 }
 
 function applyRaceModifiers(renderRace) {
     // remove previous race modifiers
     resetToBaseStats()
-    // console.log(characterStats)
     // apply current race modifiers
     for (let i = 0; i < 6; i++) {
-        // console.log(characterStats[i] + raceModifiers[renderRace][i])
         characterStats[i] += raceModifiers[renderRace][i]
     }
 
