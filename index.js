@@ -4,7 +4,17 @@ let constitution = document.getElementById("con")
 let intelligence = document.getElementById("int")
 let wisdom = document.getElementById("wis")
 let charisma = document.getElementById("cha")
+
 let characterRace = "human"
+let previousRace = "human"
+const raceModifiers = {
+    human: [0, 0, 0, 0, 0, 0],
+    dwarf: [0, 0, 1, 0, 0, -1],
+    elf: [0, 1, -1, 0, 0, 0],
+    gnome: [0, 0, 0, 1, -1, 0],
+    helf: [0, 0, 0, 0, 0, 0],
+    halfling: [-1, 1, 0, 0, 0, 0],
+}
 
 // rolls 3d6 as a baseline stat generator
 function generateStat() {
@@ -24,6 +34,8 @@ function chooseRace() {
             characterRace = races[i].value
         }
     }
+
+    raceModifier()
 }
 
 // apply racial ability modifiers
