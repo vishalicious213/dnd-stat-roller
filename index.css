@@ -22,25 +22,27 @@
 
 #form-race {
     outline: 1px solid red;
-    /* display: grid; */
-    /* grid-template-columns: repeat(2rem, 1fr); */
-    /* grid-template-columns: 100%; */
-    /* display: flex;
-    flex-wrap: wrap; */
     font-size: 1.5rem;
     margin-bottom: 2rem;
     max-width: 20rem;
 }
 
 .race {
+    /* outline: 1px solid orange; */
     display: flex;
 }
 
 input {
     /* outline: 1px solid blue; */
-    margin-right: .5rem;
+    width: 1rem;
 }
 
 label {
     /* outline: 1px solid green; */
+    width: 7rem;
+}
+
+.race-modifier {
+    /* outline: 1px solid yellow; */
+    font-style: italic;
 }
