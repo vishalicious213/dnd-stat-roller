@@ -92,35 +92,27 @@ function raceModifier() {
     }
 }
 
-// find which set of race modifiers to render
-function renderRaceModifiers(renderRace) {
-    console.log(raceModifiers[renderRace])
-    modStr.textContent = raceModifiers[renderRace][0]
-    modDex.textContent = raceModifiers[renderRace][1]
-    modCon.textContent = raceModifiers[renderRace][2]
-    modInt.textContent = raceModifiers[renderRace][3]
-    modWis.textContent = raceModifiers[renderRace][4]
-    modCha.textContent = raceModifiers[renderRace][5]
+// format racial modifiers for display on screen
+function clean(valueToFormat) {
+    // console.log(valueToFormat)
+    if (valueToFormat === 0) {
+        return ""
+    }
+    if (valueToFormat > 0) {
+        return `+${valueToFormat}`
+    }
+    return valueToFormat
 }
 
-// render penalties/bonuses in Modifiers column
-function renderModifiers(modifierSet) {
-    let values = modifierSet
-    for (let i = 0; i < 6; i++) {
-        if (values[i] === 0) {
-            values[i] = ""
-        }
-        if (values[i] > 0) {
-            values[i] = `+${values[i]}`
-        }
-    }
-
-    modStr.textContent = values[0]
-    modDex.textContent = values[1]
-    modCon.textContent = values[2]
-    modInt.textContent = values[3]
-    modWis.textContent = values[4]
-    modCha.textContent = values[5]
+// render racial modifiers on screen
+function renderRaceModifiers(renderRace) {
+    console.log(raceModifiers[renderRace])
+    modStr.textContent = clean(raceModifiers[renderRace][0])
+    modDex.textContent = clean(raceModifiers[renderRace][1])
+    modCon.textContent = clean(raceModifiers[renderRace][2])
+    modInt.textContent = clean(raceModifiers[renderRace][3])
+    modWis.textContent = clean(raceModifiers[renderRace][4])
+    modCha.textContent = clean(raceModifiers[renderRace][5])
 }
 
 function applyRaceModifiers(modifierSet) {
