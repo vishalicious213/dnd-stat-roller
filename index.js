@@ -27,21 +27,17 @@ function generateStat() {
     return stat
 }
 
-// find selected race/species
-function chooseRace() {
-    let races = document.getElementsByName("race")
-    // loop through race radio buttons and get selected one, set characterRace to that value
-    for (i = 0; i < races.length; i++) {
-        if (races[i].checked) {
-            characterRace = races[i].value
-        }
-    }
+// set selected race/species
+function chooseRace(raceFromForm) {
+    characterRace = raceFromForm.value
+    console.log(`current race:`, characterRace)
 }
 
 // apply racial ability modifiers
 function raceModifier() {
     if (characterRace === "human") {
         console.log("applyling human modifiers")
+        applyRaceModifiers()
         previousRace = "human"
     }
 
@@ -49,14 +45,23 @@ function raceModifier() {
         console.log("applyling dwarf modifiers")
         // console.log(raceModifiers.dwarf)
         applyRaceModifiers()
+        previousRace = "dwarf"
     }
 }
 
 function applyRaceModifiers() {
     // console.log(raceModifiers[characterRace][5])
+    console.log(`${previousRace} > ${characterRace}`)
     for (i = 0; i < 6; i++) {
+        // remove modifiers from previous race
+        // console.log('prev', raceModifiers[previousRace][i])
+        characterStats[i] -= raceModifiers[previousRace][i]
+        // add modifiers from current race
+        // console.log('curr', raceModifiers[characterRace][i])
         characterStats[i] += raceModifiers[characterRace][i]
     }
+
+    renderStats()
 }
 
 function renderStats() {
@@ -74,18 +79,13 @@ function rollDice() {
 
     // roll base stats
     characterStats[0] = generateStat()
-    // strength.textContent = characterStats[0]
     characterStats[1] = generateStat()
-    // dexterity.textContent = characterStats[1]
     characterStats[2] = generateStat()
-    // constitution.textContent = characterStats[2]
     characterStats[3] = generateStat()
-    // intelligence.textContent = characterStats[3]
     characterStats[4] = generateStat()
-    // wisdom.textContent = characterStats[4]
     characterStats[5] = generateStat()
-    // charisma.textContent = characterStats[5]
 
+    // display stats onscreen
     renderStats()
 
     // apply racial modifiers
