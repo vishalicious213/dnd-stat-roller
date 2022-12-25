@@ -1,9 +1,18 @@
+// html attribute score elements
 let strength = document.getElementById("str")
 let dexterity = document.getElementById("dex")
 let constitution = document.getElementById("con")
 let intelligence = document.getElementById("int")
 let wisdom = document.getElementById("wis")
 let charisma = document.getElementById("cha")
+
+// html attribute modifier elements
+let modStr = document.getElementById("mod-str")
+let modDex = document.getElementById("mod-dex")
+let modCon = document.getElementById("mod-con")
+let modInt = document.getElementById("mod-int")
+let modWis = document.getElementById("mod-wis")
+let modCha = document.getElementById("mod-cha")
 
 let characterStats = [0, 0, 0, 0, 0, 0]
 
@@ -37,6 +46,7 @@ function chooseRace(raceFromForm) {
 function raceModifier() {
     if (characterRace === "human") {
         console.log("applyling human modifiers")
+        renderRaceModifiers(0)
         applyRaceModifiers()
         previousRace = "human"
     }
@@ -44,9 +54,31 @@ function raceModifier() {
     if (characterRace === "dwarf") {
         console.log("applyling dwarf modifiers")
         // console.log(raceModifiers.dwarf)
+        renderRaceModifiers(1)
         applyRaceModifiers()
         previousRace = "dwarf"
     }
+}
+
+function renderRaceModifiers(renderRace) {
+    if (renderRace === 0) {
+        console.log("render human")
+        renderModifiers(raceModifiers.human)
+    }
+
+    if (renderRace === 1) {
+        console.log("render dwarf")
+        renderModifiers(raceModifiers.dwarf)
+    }
+}
+
+function renderModifiers(modSet) {
+    modStr.textContent = modSet[0]
+    modDex.textContent = modSet[1]
+    modCon.textContent = modSet[2]
+    modInt.textContent = modSet[3]
+    modWis.textContent = modSet[4]
+    modCha.textContent = modSet[5]
 }
 
 function applyRaceModifiers() {
