@@ -36,39 +36,58 @@ function chooseRace() {
             characterRace = races[i].value
         }
     }
-
-    raceModifier()
 }
 
 // apply racial ability modifiers
 function raceModifier() {
     if (characterRace === "human") {
         console.log("applyling human modifiers")
+        previousRace = "human"
     }
 
     if (characterRace === "dwarf") {
         console.log("applyling dwarf modifiers")
-        console.log(raceModifiers.dwarf)
+        // console.log(raceModifiers.dwarf)
+        applyRaceModifiers()
     }
+}
 
+function applyRaceModifiers() {
+    // console.log(raceModifiers[characterRace][5])
+    for (i = 0; i < 6; i++) {
+        characterStats[i] += raceModifiers[characterRace][i]
+    }
+}
+
+function renderStats() {
+    strength.textContent = characterStats[0]
+    dexterity.textContent = characterStats[1]
+    constitution.textContent = characterStats[2]
+    intelligence.textContent = characterStats[3]
+    wisdom.textContent = characterStats[4]
+    charisma.textContent = characterStats[5]
 }
 
 function rollDice() {
+    // get character race, so we can set modifiers later
     chooseRace()
-    // console.log('char race:', characterRace)
+
+    // roll base stats
     characterStats[0] = generateStat()
-    strength.textContent = characterStats[0]
+    // strength.textContent = characterStats[0]
     characterStats[1] = generateStat()
-    dexterity.textContent = characterStats[1]
+    // dexterity.textContent = characterStats[1]
     characterStats[2] = generateStat()
-    constitution.textContent = characterStats[2]
+    // constitution.textContent = characterStats[2]
     characterStats[3] = generateStat()
-    intelligence.textContent = characterStats[3]
+    // intelligence.textContent = characterStats[3]
     characterStats[4] = generateStat()
-    wisdom.textContent = characterStats[4]
+    // wisdom.textContent = characterStats[4]
     characterStats[5] = generateStat()
-    charisma.textContent = characterStats[5]
+    // charisma.textContent = characterStats[5]
+
+    renderStats()
 
     // apply racial modifiers
-    
+    raceModifier()
 }
