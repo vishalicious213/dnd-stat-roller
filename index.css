@@ -150,3 +150,17 @@ label {
 .selection-header {
     margin: 0 5rem 0 1.5rem;
 }
+
+/* RACE STAT REQUIREMENT TABLE */
+
+#race-stat-req {
+    /* outline: 1px solid red; */
+    width: 20rem;
+    /* display: flex; */
+    /* justify-content: space-between; */
+}
+
+#race-stat-req tr {
+    /* outline: 1px solid white; */
+    text-align: center;
+}
