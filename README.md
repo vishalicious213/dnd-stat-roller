@@ -17,3 +17,5 @@ Basic AD&D 2nd Edition character stat generator using 3d6 method and adding raci
 - functions
 - if statements
 - for loops
+
+Deployed at: https://adnd-stat-roller.netlify.app/
